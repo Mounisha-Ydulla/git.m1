@@ -1,0 +1,14 @@
+name:Docker series builds
+
+on:[push]
+
+jobs:
+   builds:
+    runs-on:linux-latest
+    steps:
+    - uses: actions/checkout@v2
+    - name: docker build
+      run:
+      docker build ./c# -t aimvector/csharp:1.0.0
+      
+      
